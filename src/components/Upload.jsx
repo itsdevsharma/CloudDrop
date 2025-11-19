@@ -11,29 +11,33 @@ function Upload() {
     navigate("/my-files");
   }
 
+  //
   const handleUpload = async () => {
-    if (!file) return;
+  const formData = new FormData();
+  formData.append("file", selectedFile);
 
-    const formData = new FormData();
-    formData.append("file", file);
+  const res = await axios.post(
+    "http://localhost:5000/api/file/upload",
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    }
+  );
 
-    const res = await API.post("/api/file/upload", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
+  console.log("Uploaded file:", res.data);
+};
 
-    alert("Uploaded!");
-  };
 
   return (
     <div className="uploadpage">
       <h1>CloudDrop</h1>
       <h2>Upload File</h2>
 
-      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-
-      <button onClick={handleUpload}>
-        Upload
-      </button>
+      <input type="file" onChange={(e) => setSelectedFile(e.target.files[0])} />
+      <button onClick={handleUpload}>Upload</button>
       <button onClick={handleClick}>Go to My Files</button>
     </div>
   );
