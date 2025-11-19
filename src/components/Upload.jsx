@@ -1,6 +1,6 @@
 import { useState } from "react";
 import API from "../axiosInstance";
-import "../styles/Upload.css";
+import "../styles/upload.css";
 import { useNavigate } from "react-router-dom";
 
 function Upload() {
