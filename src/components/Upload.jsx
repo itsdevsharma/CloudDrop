@@ -22,15 +22,16 @@ function Upload() {
     formData.append("file", file);
 
     const res = await axios.post(
-      "https://cloud-drop-backend.vercel.app/api/file/upload",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        }
-      }
-    );
+  "https://cloud-drop-backend.vercel.app/api/file/upload",
+  formData,
+  {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+  }
+);
+
 
     console.log("Uploaded file:", res.data);
   };
