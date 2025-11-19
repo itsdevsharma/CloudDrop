@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../axiosInstance";
-import "../styles/MyFiles.css";
+import "../styles/myfiles.css";
 import { useNavigate } from "react-router-dom";
 
 function MyFiles() {
