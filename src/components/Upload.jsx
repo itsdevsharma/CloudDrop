@@ -12,6 +12,8 @@ function Upload() {
     navigate("/my-files");
   };
 
+  
+
   const handleUpload = async () => {
     if (!file) {
       alert("Please select a file!");
@@ -34,6 +36,8 @@ function Upload() {
 
 
     console.log("Uploaded file:", res.data);
+
+    alert("File uploaded successfully!");
   };
 
   return (
