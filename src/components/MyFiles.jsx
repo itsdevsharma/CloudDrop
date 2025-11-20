@@ -44,7 +44,7 @@ function MyFiles() {
         },
       }
     );
-
+    alert("Deleted succesfully");
     loadFiles();
   };
 
