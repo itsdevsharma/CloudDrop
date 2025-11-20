@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://cloud-drop-backend.vercel.app/", // your backend URL
+  baseURL: "https://cloud-drop-backend.vercel.app", // your backend URL
 });
 
 // attach token automatically
